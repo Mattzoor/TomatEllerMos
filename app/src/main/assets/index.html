@@ -1,7 +1,7 @@
 <html>
-<head>
-    <title>Tomat Eller Mos</title>
-    <style>
+	<head>
+		<title>Tomat Eller Mos</title>
+		<style>
 			body {
   padding-top: 50px;
   background: #F7F7F7;
@@ -13,13 +13,13 @@ h1{
 #coin {
   position: relative;
   margin: 0 auto;
-  width: 1000px;
-  height: 1000px;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
 }
 #coin div {
   width: 100%;
-  height: 100%;
+  height: 50%;
   -webkit-border-radius: 50%;
      -moz-border-radius: 50%;
           border-radius: 50%;
@@ -72,13 +72,13 @@ h1{
   to { -webkit-transform: rotateY(1980deg); -moz-transform: rotateY(1980deg); transform: rotateY(1980deg); }
 }
 		</style>
-    <script src="./shake.js"></script>
-    <script src="./jquery.min.js"></script>
-    <script type="text/javascript">
+		<script src="./Shake.js"></script>
+		<script src="./jquery.min.js"></script>
+		<script type="text/javascript">
 			window.onload = function() {
 				//create a new instance of shake.js.
 				var myShakeEvent = new Shake({
-					threshold: 15
+					threshold: 10
 				});
 				// start listening to device motion
 				myShakeEvent.start();
@@ -89,41 +89,40 @@ h1{
 					var flipResult = Math.random();
 					$('#coin').removeClass();
 					setTimeout(function(){
-					if(flipResult <= 0.5){
-						$('#coin').addClass('heads');
-						console.log('it is head');
-					}
-					else{
-						$('#coin').addClass('tails');
-						console.log('it is tails');
-					}
-				})
+						if(flipResult <= 0.5){
+							$('#coin').addClass('heads');
+							console.log('it is head');
+						}
+						else{
+							$('#coin').addClass('tails');
+							console.log('it is tails');
+						}
+					}, 100);
+				}
 			};
 		</script>
-    <script type = "text/javascript">
+		<script type = "text/javascript">
 			jQuery(document).ready(function($){
-
 				$('#coin').on('click', function(){
 					var flipResult = Math.random();
 					$('#coin').removeClass();
 					setTimeout(function(){
-					if(flipResult <= 0.5){
-						$('#coin').addClass('heads');
-						console.log('it is head');
-					}
-					else{
-						$('#coin').addClass('tails');
-						console.log('it is tails');
-					}
+						if(flipResult <= 0.5){
+							$('#coin').addClass('heads');
+							console.log('it is head');
+						}
+						else{
+							$('#coin').addClass('tails');
+							console.log('it is tails');
+						}
 				}, 100);
-			});});
-	</script>
-</head>
-<body>
-<div id="coin">
-    <div class="side-a"><image id="coin" src="./mos.png" /></div>
-    <div class="side-b" ><image id="coin" src="./tomat.png" /></div>
-</div>
-<h1>Click on coin to flip</h1>
-</body>
+			});}); 
+	</script>	
+	</head>
+	<body>
+		<div id="coin">
+			<div class="side-a"><image id="coin" src="./mos.png" /></div>
+			<div class="side-b" ><image id="coin" src="./tomat.png" /></div>
+		</div>
+	</body>
 </html>
